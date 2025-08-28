@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Frequency Tone Generator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol id="icon-check" viewBox="0 0 24 24">
+            <path
+                d="M20.3 5.7a1 1 0 0 1 0 1.4l-10 10a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.4L9.3 15l9.3-9.3a1 1 0 0 1 1.4 0Z" />
+        </symbol>
+        <symbol id="icon-alert" viewBox="0 0 24 24">
+            <path d="M12 2 1 21h22L12 2Zm0 7v6m0 4h.01" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+    </svg>
+
+    <header class="wrapper flow" style="padding-block: var(--space-2)">
+        <nav class="cluster" aria-label="Primary">
+            <a class="btn" href="/">
+                <span class="icon" aria-hidden="true"><svg>
+                        <use href="#icon-check" />
+                    </svg></span>Home
+            </a>
+            <a class="btn" href="https://michalferber.me/2025-08-10-vibrational-medicine-healing-with-frequencies/">
+                <span class="icon" aria-hidden="true"><svg>
+                        <use href="#icon-alert" />
+                    </svg></span>Blog
+            </a>
+        </nav>
+        <h1 style="font-size:var(--step-4);margin:0">Frequency Tone Generator</h1>
+    </header>
+
+    <main class="wrapper flow">
+        <h3>Enter a frequency (Hz) and press play:</h3>
+
+        <div>
+            <input type="number" id="freqInput" value="10" min="1" max="20000" class="btn"
+                style="background-color: #fff; color: #000" />
+            <button class="btn" id="playBtn">Play</button>
+            <button class="btn" id="stopBtn">Stop</button>
+            <h4>Works best with headphones.</h4>
+        </div>
+
+        <h2 class="header">Frequency Chart for Common Conditions</h2>
+
+        <p>Below is a list of suggested frequencies used in vibrational healing. These are based on anecdotal and
+            alternative
+            medicine sources, not mainstream medical consensus.</p>
+
+        <table class="table table--stack">
+            <thead>
+                <tr>
+                    <th>Condition</th>
+                    <th>Frequency Range (Hz)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Acne</td>
+                    <td>10–15</td>
+                </tr>
+                <tr>
+                    <td>Allergies</td>
+                    <td>5–10</td>
+                </tr>
+                <tr>
+                    <td>Alzheimer’s Disease</td>
+                    <td>2–8</td>
+                </tr>
+                <tr>
+                    <td>Angina</td>
+                    <td>2–8</td>
+                </tr>
+                <tr>
+                    <td>Anxiety</td>
+                    <td>2–8</td>
+                </tr>
+                <tr>
+                    <td>Arrhythmia</td>
+                    <td>7–8</td>
+                </tr>
+                <tr>
+                    <td>Arteriosclerosis</td>
+                    <td>7–10</td>
+                </tr>
+                <tr>
+                    <td>Asthma</td>
+                    <td>7–10 or 12–15</td>
+                </tr>
+                <tr>
+                    <td>Blepharitis (Chronic)</td>
+                    <td>1–2</td>
+                </tr>
+                <tr>
+                    <td>Bronchitis</td>
+                    <td>Acute: 4, Chronic: 12</td>
+                </tr>
+                <tr>
+                    <td>Bruises</td>
+                    <td>10–14</td>
+                </tr>
+                <tr>
+                    <td>Carpal Tunnel Syndrome</td>
+                    <td>6 or 20</td>
+                </tr>
+                <tr>
+                    <td>Cervical Vertebra Pain</td>
+                    <td>15–20</td>
+                </tr>
+                <tr>
+                    <td>Chronic Pelvic Pain</td>
+                    <td>5–7</td>
+                </tr>
+                <tr>
+                    <td>Circulatory Dysfunction</td>
+                    <td>7–10</td>
+                </tr>
+                <tr>
+                    <td>Constipation</td>
+                    <td>3–4</td>
+                </tr>
+                <tr>
+                    <td>Depression</td>
+                    <td>3–5</td>
+                </tr>
+                <tr>
+                    <td>Dermatitis</td>
+                    <td>10–15</td>
+                </tr>
+                <tr>
+                    <td>Diabetes</td>
+                    <td>6–8</td>
+                </tr>
+                <tr>
+                    <td>Eczema</td>
+                    <td>10–15</td>
+                </tr>
+                <tr>
+                    <td>Fibromyalgia</td>
+                    <td>2–8</td>
+                </tr>
+                <tr>
+                    <td>Gastritis</td>
+                    <td>3–5</td>
+                </tr>
+                <tr>
+                    <td>Glaucoma</td>
+                    <td>1–2</td>
+                </tr>
+                <tr>
+                    <td>Hay Fever</td>
+                    <td>5–10</td>
+                </tr>
+                <tr>
+                    <td>Hearing Loss</td>
+                    <td>2–8</td>
+                </tr>
+                <tr>
+                    <td>Hypertension</td>
+                    <td>7–10</td>
+                </tr>
+                <tr>
+                    <td>Immune Boost</td>
+                    <td>8–12</td>
+                </tr>
+                <tr>
+                    <td>Inflammation</td>
+                    <td>6–8</td>
+                </tr>
+                <tr>
+                    <td>Insomnia</td>
+                    <td>3–5</td>
+                </tr>
+                <tr>
+                    <td>Joint Pain</td>
+                    <td>7–10</td>
+                </tr>
+                <tr>
+                    <td>Kidney Stones</td>
+                    <td>6–9</td>
+                </tr>
+                <tr>
+                    <td>Liver Dysfunction</td>
+                    <td>6–8</td>
+                </tr>
+                <tr>
+                    <td>Low Energy</td>
+                    <td>10–12</td>
+                </tr>
+                <tr>
+                    <td>Migraine</td>
+                    <td>2–5</td>
+                </tr>
+                <tr>
+                    <td>Muscle Cramps</td>
+                    <td>12–15</td>
+                </tr>
+                <tr>
+                    <td>Neuralgia</td>
+                    <td>2–4</td>
+                </tr>
+                <tr>
+                    <td>Osteoporosis</td>
+                    <td>7–10</td>
+                </tr>
+                <tr>
+                    <td>Parkinson’s Disease</td>
+                    <td>2–4</td>
+                </tr>
+                <tr>
+                    <td>Psoriasis</td>
+                    <td>10–15</td>
+                </tr>
+                <tr>
+                    <td>Sciatica</td>
+                    <td>2–4</td>
+                </tr>
+                <tr>
+                    <td>Sinusitis</td>
+                    <td>5–7</td>
+                </tr>
+                <tr>
+                    <td>Stress</td>
+                    <td>2–8</td>
+                </tr>
+                <tr>
+                    <td>Stroke Recovery</td>
+                    <td>1–3</td>
+                </tr>
+                <tr>
+                    <td>Tendonitis</td>
+                    <td>6–9</td>
+                </tr>
+                <tr>
+                    <td>Toothache</td>
+                    <td>1–3</td>
+                </tr>
+                <tr>
+                    <td>Tinnitus</td>
+                    <td>2–8</td>
+                </tr>
+                <tr>
+                    <td>Ulcers</td>
+                    <td>2–4</td>
+                </tr>
+                <tr>
+                    <td>Varicose Veins</td>
+                    <td>8–10</td>
+                </tr>
+                <tr>
+                    <td>Wound Healing</td>
+                    <td>6–12</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="header">How to Use Frequencies</h2>
+
+        <p>People apply these tones in several ways:</p>
+        <ul>
+            <li><strong>Meditation</strong> — Playing tones during mindfulness practice.</li>
+            <li><strong>Focused Sessions</strong> — Using headphones or speakers aimed toward specific areas of the
+                body.</li>
+            <li><strong>Background Therapy</strong> — Low-volume playback during daily activities.</li>
+        </ul>
+
+        <h2 class="btn">Disclaimer & Notes:</h2>
+        <ul>
+            <li>This is not a substitute for medical treatment. Always consult a qualified healthcare provider before
+                starting any therapy.</li>
+            <li>This ZIP file contains pre-generated <code>.wav</code> files for each frequency in the chart referenced
+                in the <a href="https://michalferber.me/blog/vibrational-medicine-healing-with-frequencies">blog
+                    post</a>.</p>
+        </ul>
+
+        <a class="header" href="/frequency_tones.zip">Download All Frequency Tones (ZIP)</a></li>
+
+        <script>
+            let audioCtx = null, oscillator = null;
+
+            async function ensureCtx() {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') await audioCtx.resume();
+            }
+
+            function stopTone() {
+                if (oscillator) {
+                    try { oscillator.stop(); } catch (_) { }
+                    oscillator.disconnect(); oscillator = null;
+                }
+            }
+
+            async function playTone() {
+                const freq = parseFloat(document.getElementById('freqInput').value);
+                await ensureCtx();
+                stopTone();
+                oscillator = audioCtx.createOscillator();
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                oscillator.connect(audioCtx.destination);
+                oscillator.start();
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('playBtn').addEventListener('click', playTone);
+                document.getElementById('stopBtn').addEventListener('click', stopTone);
+            });
+        </script>
+    </main>
+
+    <footer class="wrapper" style="padding-block: var(--space-2); color: var(--muted)">
+        <p>&copy; 2025 MichalFerber.me</p>
+    </footer>
+</body>
+
+</html>

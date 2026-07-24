@@ -1,0 +1,64 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* --- frequency tone generator: app controls on top of Cayman --- */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  margin: 0.5rem 0 0.25rem;
+  background: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+}
+.freq-input {
+  font: 700 1.5rem/1 "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  width: 7rem;
+  text-align: center;
+  padding: 0.45rem 0.6rem;
+  color: #1b1f24;
+  background: #fff;
+  border: 1px solid #c9d1d9;
+  border-radius: 8px;
+}
+.freq-input:focus { outline: none; border-color: #159957; box-shadow: 0 0 0 3px rgba(21, 153, 87, 0.25); }
+.controls .unit { color: #606c71; font-family: "SFMono-Regular", Consolas, monospace; margin-right: 0.4rem; }
+
+.controls button {
+  font: 600 1rem/1 inherit;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+#playBtn { background: #159957; }
+#playBtn:hover { background: #127a46; }
+#stopBtn { background: #6a737d; }
+#stopBtn:hover { background: #586069; }
+
+.hint { color: #606c71; margin: 0.4rem 0 0; }
+
+/* download button */
+a.download {
+  display: inline-block;
+  background: #155799;
+  color: #fff;
+  padding: 0.6rem 1.15rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+a.download:hover { background: #124a80; color: #fff; text-decoration: none; }
+
+/* emphasize the frequency values in the reference table */
+.main-content table td:last-child {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  white-space: nowrap;
+}

@@ -1,0 +1,21 @@
+title: Frequency Tone Generator
+description: A no-build, browser-based pure-tone generator (Web Audio API) with a reference chart and downloadable WAVs.
+
+url: https://michalaferber.github.io
+baseurl: "/frequency-tone-generator"
+
+theme: jekyll-theme-cayman
+
+repository: MichalAFerber/frequency-tone-generator
+show_downloads: false
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - LICENSE
